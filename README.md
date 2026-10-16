@@ -1,15 +1,23 @@
-# LACAN-Launch-Cockpit
-El LACAN Launch Cockpit será un micrositio regional diseñado para consolidar, actualizar y visualizar la información crítica de los lanzamientos por país, familia, producto y área funcional.
-La solución permitirá que cada área responsable actualice directamente sus hitos, fechas, riesgos, dependencias e impactos, manteniendo una fuente única de información. A partir de esos datos, los usuarios podrán consultar vistas personalizadas según su rol:
-•	Brand Manager: panorama de su marca en todos los mercados.
-•	Equipo país: portafolio completo de lanzamientos de su mercado.
-•	Liderazgo regional: visión consolidada de readiness, riesgos e impacto financiero.
-•	Área funcional: actividades y entregables bajo su responsabilidad.
-El Launch Cockpit combinará información de lanzamientos, S&OP, Marketing, Regulatory, Supply Chain, Commercial y Market Access. Su implementación inicial se plantea mediante herramientas de Microsoft 365:
-•	SharePoint Online como micrositio y punto de acceso.
-•	Microsoft Lists como base estructurada inicial.
-•	Power Apps para captura y actualización de información.
-•	Power BI para visualización.
-•	Power Automate para alertas, aprobaciones y recordatorios.
-•	Microsoft Teams como canal de acceso y colaboración.
-El objetivo no es crear únicamente un dashboard, sino una herramienta regional de gestión que facilite la toma de decisiones, reduzca el trabajo manual y permita anticipar desviaciones antes de que afecten el lanzamiento.
+# LATAM Launch Cockpit
+
+MVP para gestionar lanzamientos de productos por mercado. Incluye cockpit regional, alta de productos y lanzamientos, hitos con plan original/estimación/fecha real, registro de riesgos y acciones, filtros y persistencia local.
+
+## Requisitos
+
+- Node.js 18 o superior
+- npm
+
+## Ejecución
+
+```powershell
+npm install
+npm run dev
+```
+
+Vite mostrará la URL local disponible, normalmente `http://localhost:5173`.
+
+## Datos y alcance
+
+El modelo tipado y normalizado está en `src/model.ts`; la demostración inicial está en `src/seed.ts`. El blueprint de requisitos, roles, relaciones, pantallas y automatizaciones está en `docs/MVP-Blueprint.md`.
+
+Este MVP guarda la información en `localStorage` del navegador y permite descargar una copia JSON. Los datos no se comparten entre usuarios o dispositivos. Para operación multiusuario, el siguiente incremento debe incorporar API, base de datos relacional, autenticación y autorización por rol; no hay integraciones automáticas con ERP ni sistemas externos.
